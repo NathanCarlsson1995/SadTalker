@@ -58,7 +58,7 @@ def _stft(y):
     if hp.use_lws:
         return _lws_processor(hp).stft(y).T
     else:
-        return librosa.stft(y=y, n_fft=hp.n_fft, hop_length=get_hop_size(), win_length=hp.win_size)
+        return librosa.stft(y=y, n_fft=hp.n_fft, hop_length=get_hop_size(), win_length=hp.win_size, dtype=float)
 
 ##########################################################
 #Those are only correct when using lws!!! (This was messing with Wavenet quality for a long time!)
